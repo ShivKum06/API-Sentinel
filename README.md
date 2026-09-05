@@ -23,7 +23,7 @@ python simulator/brute_force.py
 python simulator/injection.py
 ```
 
-The API exposes the protected demo routes (`/login`, `/products`, `/users`, `/users/{id}`, `/search`, `/payment`, `/admin/data`) and dashboard routes (`/api/events`, `/api/incidents`, `/api/endpoints`, `/api/stats`, `/api/incidents/{id}`, `/api/incidents/{id}/override`). WebSocket events use `/ws/events`.
+The API exposes the protected demo routes (`/login`, `/products`, `/users`, `/users/{id}`, `/search`, `/payment`, `/admin/data`) and dashboard routes (`/api/events`, `/api/incidents`, `/api/endpoints`, `/api/stats`, `/api/incidents/{id}`, `/api/incidents/{id}/override`). The integrated security demonstrations include BOLA protection at `/api/v1/orders/{order_id}`, strict profile schema validation at `/api/v1/user/profile`, and response PII masking at `/api/v1/user/statement`. WebSocket events use `/ws/events`.
 
 ## Contracts
 

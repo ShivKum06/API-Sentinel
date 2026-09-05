@@ -2,7 +2,9 @@ from sentinel.models import DecisionResult, SecurityResult
 
 
 def decide(result: SecurityResult) -> DecisionResult:
-    if result.risk_score >= 80 or result.threat_score >= 90:
+    if result.threat_type == "API_ENUMERATION":
+        decision, policy = "REVIEW", "DEFAULT-ELEVATED-RISK"
+    elif result.risk_score >= 80 or (result.threat_score >= 90 and result.threat_type != "API_ENUMERATION"):
         decision, policy = "BLOCK", "DEFAULT-HIGH-RISK"
     elif result.risk_score >= 60:
         decision, policy = "REVIEW", "DEFAULT-ELEVATED-RISK"
